@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title> image uploader</title>
+  </head>
+    <h1>TIFF Image Uploader</h1>
+    <body>
+    <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+      <label for="image">Select a TIFF image:</label>
+      <input type="file" id="image" name="image"><br><br>
+      <input type="submit" value="upload">
+    </form>
+  </body>
+</html>
