@@ -27,7 +27,7 @@ def upload():
             image_file = request.files["image"]
             extract_data_from_tiff(image_file)
             return redirect("/schedule")  # Redirect to the /schedule route
-    return render_template("tiff3.html")
+    return render_template("upload.html")
 
 @app.route("/schedule", methods=["GET", "POST"])
 def schedule():
@@ -38,7 +38,7 @@ def schedule():
         scheduler.start()
         atexit.register(lambda: scheduler.shutdown())
         return "Scheduled job successfully!"
-    return render_template("tiff4.html")
+    return render_template("schedule.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
